@@ -6,12 +6,6 @@
           rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-<script>
-    $(document).ready(function() {
-        $('#covTracker').DataTable();
-    } );
-</script>
-
 
 <body>
 <div class="container">
@@ -26,11 +20,11 @@
             <span th:text="${totalNewCases}"></span>
         </p>
     </div>
-    <table id="covTracker" class="table table-striped table-dark table-hover">
+    <table class="table table-striped table-dark table-hover">
         <tr>
             <th>Etat</th>
             <th>Pays</th>
-            <th onclick="location.href='/lower'">Total de cas reportés <i class="fas fa-arrows-alt-v" style="margin-left: 5px"></i></th>
+            <th onclick="location.href='/'">Total de cas reportés <i class="fas fa-arrows-alt-v" style="margin-left: 5px"></i></th>
             <th>Changement depuis hier</th>
         </tr>
         <tr th:each="locationStat : ${locationStats}">

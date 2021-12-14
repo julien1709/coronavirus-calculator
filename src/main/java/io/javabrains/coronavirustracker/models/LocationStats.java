@@ -1,6 +1,6 @@
 package io.javabrains.coronavirustracker.models;
 
-public class LocationStats {
+public class LocationStats implements Comparable<LocationStats> {
 
 	private String state;
 	private String country;
@@ -46,5 +46,10 @@ public class LocationStats {
 				", country='" + country + '\'' +
 				", latestTotalCases=" + latestTotalCases +
 				'}';
+	}
+
+	@Override
+	public int compareTo(LocationStats o) {
+		return this.latestTotalCases - o.latestTotalCases;
 	}
 }
